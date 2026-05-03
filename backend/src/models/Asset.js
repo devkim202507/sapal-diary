@@ -31,7 +31,6 @@ const assetSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-assetSchema.index({ symbol: 1 }, { unique: true });
 assetSchema.index({ lastUsedAt: -1, usageCount: -1 });
 
 export const Asset = mongoose.model('Asset', assetSchema);
